@@ -33,4 +33,8 @@ public class ComplexJsonParse {
         }
         Assert.assertEquals(copies,10);
     }
+
+    public static String tempFunc() {
+        return null;
+    }
 }

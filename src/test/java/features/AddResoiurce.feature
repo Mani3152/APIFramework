@@ -2,7 +2,7 @@ Feature: Validating addPlace API's
 
   Scenario Outline: Verify if addPlace is being Succesfully added using AddPlaceAPI
     Given Add Place Payload "<name>"  "<language>" "<address>"
-    When calls "AddPlaceAPI" with POST http request
+    When calls AddPlaceAPI with POST http request
     Then the API call got success with status code
 
     Examples:

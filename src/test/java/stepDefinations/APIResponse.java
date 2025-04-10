@@ -25,7 +25,7 @@ public class APIResponse extends Utils {
     static String place_id;
 
 
-
+//Hello
     @Given("Add Place Payload {string}  {string} {string}")
     public void add_place_payload(String name, String language, String address) throws IOException {
         res =given().spec(requestSpecification())
@@ -33,11 +33,12 @@ public class APIResponse extends Utils {
     }
 
     @When("calls AddPlaceAPI with POST http request")
-    public void calls_add_place_api_with_post_http_request() {
+    public Response calls_add_place_api_with_post_http_request() {
         response = res.post("/maps/api/place/add/json");
         place_id = getJsonPath(response, "place_id");
         System.out.println(place_id);
         System.out.println(response.asString());
+        return response;
     }
 
     @Then("the API call got success with status code")
